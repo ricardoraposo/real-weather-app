@@ -4,7 +4,7 @@ import "./style.css"
 
 const locationInput = "belo horizonte"
 
-getCurrentDate(locationInput)
+renderAll(locationInput)
 
 async function renderAll(locationInput) {
   const weatherData = await getWeather(locationInput)
@@ -13,10 +13,7 @@ async function renderAll(locationInput) {
   renderLeftWrapper(weatherData, locationData, currentDate)
   renderRightWrapper(weatherData)
   renderBottom(currentDate, weatherData)
-}
 
-async function renderAndAddEL() {
-  await renderAll(locationInput)
   const topWrapper = document.querySelector(".top-wrapper")
   const bottomWrapper = document.querySelector(".bottom-wrapper")
   const searchButton = document.getElementById("search-button")
@@ -28,7 +25,7 @@ async function renderAndAddEL() {
     bottomWrapper.innerHTML = ""
     await renderAll(searchInput.value)
     searchInput.value = ""
-  })
+})
 }
 
-renderAndAddEL()
+
