@@ -25,7 +25,7 @@ async function renderAll(locationInput) {
     bottomWrapper.innerHTML = ""
     await renderAll(searchInput.value)
     searchInput.value = ""
-})
+  })
 }
 
 
